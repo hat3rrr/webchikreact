@@ -1,0 +1,23 @@
+.footer {
+    background-color: blanchedalmond;
+    color: white;
+    padding: 10px 0 30px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    max-height: 70px;
+}
+
+.footer p{
+    color: black;
+}
+.links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+    color: red;
+}
