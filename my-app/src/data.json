@@ -1,0 +1,30 @@
+[{
+    "id":1,
+    "title":"ТПР",
+    "description":"Теория принятий решений",
+    "hours": 100,
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqH9XAk7G8zeXh4uGQrjQtoeIz72dZ4pqwVYiTaCADew&s"    
+},
+{
+    "id":2,
+    "title":"МЛТА",
+    "description":"Математика логики и теория алгоритмов",
+    "hours": 125,
+    "img": "https://w7.pngwing.com/pngs/967/863/png-transparent-mathematical-logic-mathematics-intelligence-mathematical-game-mathematics-game-text-rectangle-thumbnail.png"    
+},
+{
+    "id":3,
+    "title":"ТБД",
+    "description":"Теория баз данных",
+    "hours": 100,
+    "img": "https://img.myloview.ru/canvas-prints/database-icon-vector-sign-and-symbol-isolated-on-white-background-database-logo-concept-400-131441028.jpg"    
+},
+{
+    "id":4,
+    "title":"ЧМ",
+    "description":"Численные методы",
+    "hours": 120,
+    "img": "https://img.myloview.ru/canvas-prints/database-icon-vector-sign-and-symbol-isolated-on-white-background-database-logo-concept-400-131441028.jpg"    
+}
+
+]

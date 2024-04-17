@@ -1,0 +1,33 @@
+.courses {
+    border: 1px solid #7c5757;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 500px;
+    height: 400px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    align-items: center;
+    // flex-wrap: wrap;
+  }
+  
+  .courses h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .courses p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .courses hours {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .courses img {
+    width: 50%;
+    height: auto;
+  }
