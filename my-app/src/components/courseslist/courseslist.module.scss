@@ -1,6 +1,10 @@
-.courseslist{
+.courseslist {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     flex-wrap: wrap;
-}
+    justify-content: space-between;
+  }
+
+  .courses-item {
+    flex-basis: calc(33.33% - 10px);
+    margin-bottom: 20px;
+  }

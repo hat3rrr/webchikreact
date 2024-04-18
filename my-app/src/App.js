@@ -7,9 +7,11 @@ function App() {
   return (
    
     <div className="App">
+      
       <Header> </Header>
+      <Main></Main>
       <Courseslist> </Courseslist>
-      {/* <Main></Main> */}
+      
       <Footer> </Footer>
       
     

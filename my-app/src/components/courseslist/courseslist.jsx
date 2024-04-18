@@ -6,6 +6,7 @@ const courseslist = () => {
     // console.log(data)
     return(
         <div className ={styles.courseslist}>
+            {/* <h2></h2> */}
             {/* <p>flsalfasl</p> */}
             {data.map((item) => 
                 <div key= {item.id}>

@@ -24,7 +24,28 @@
     "title":"ЧМ",
     "description":"Численные методы",
     "hours": 120,
-    "img": "https://img.myloview.ru/canvas-prints/database-icon-vector-sign-and-symbol-isolated-on-white-background-database-logo-concept-400-131441028.jpg"    
+    "img": "https://azazira.xyz/DATAIM/images/user_avatar_images/51/c9c8168acf8d.png"    
+},
+{
+    "id":5,
+    "title":"РТПО",
+    "description":"Разработка требований к программному обеспечению",
+    "hours": 120,
+    "img": "https://cdn-images-1.listennotes.com/podcasts/lets-learn-software-engineering-roy-honders-V7_eRUan8iS-u5nI3t9KcLE.1400x1400.jpg"    
+},
+{
+    "id":6,
+    "title":"Физкультура",
+    "description":"Спорт, в текущем семестре - плавание.",
+    "hours": 120,
+    "img": "https://img.razrisyika.ru/kart/128/1200/509948-sportivnyy-inventar-dlya-detey-6.jpg"    
+},
+{
+    "id":7,
+    "title":"САОД",
+    "description":"Структура алгоритмов и обработки данных",
+    "hours": 120,
+    "img": "https://thumbs.dreamstime.com/b/сеть-базы-данных-16108936.jpg"    
 }
 
 ]
