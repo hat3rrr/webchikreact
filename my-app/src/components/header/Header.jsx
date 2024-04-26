@@ -10,6 +10,13 @@ const Header = () => {
                     <h2>Dubna University</h2>
                 </div>
             </header>
+            <nav className = {styles.nav}>
+                <a href = "/"> Home</a>
+                <a href = "/catalog"> Список курсов</a>
+                <a href = "/about"> About</a>
+                <a href = "/catalogapi"> Список с Api</a>
+
+            </nav>
         </div>
     );
 }
