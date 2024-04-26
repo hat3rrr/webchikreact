@@ -3,49 +3,56 @@
     "title":"ТПР",
     "description":"Теория принятий решений",
     "hours": 100,
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqH9XAk7G8zeXh4uGQrjQtoeIz72dZ4pqwVYiTaCADew&s"    
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqH9XAk7G8zeXh4uGQrjQtoeIz72dZ4pqwVYiTaCADew&s",
+    "liked": false    
 },
 {
     "id":2,
     "title":"МЛТА",
     "description":"Математика логики и теория алгоритмов",
     "hours": 125,
-    "img": "https://w7.pngwing.com/pngs/967/863/png-transparent-mathematical-logic-mathematics-intelligence-mathematical-game-mathematics-game-text-rectangle-thumbnail.png"    
+    "img": "https://w7.pngwing.com/pngs/967/863/png-transparent-mathematical-logic-mathematics-intelligence-mathematical-game-mathematics-game-text-rectangle-thumbnail.png",
+    "liked": false   
 },
 {
     "id":3,
     "title":"ТБД",
     "description":"Теория баз данных",
     "hours": 100,
-    "img": "https://img.myloview.ru/canvas-prints/database-icon-vector-sign-and-symbol-isolated-on-white-background-database-logo-concept-400-131441028.jpg"    
+    "img": "https://img.myloview.ru/canvas-prints/database-icon-vector-sign-and-symbol-isolated-on-white-background-database-logo-concept-400-131441028.jpg",
+    "liked": false   
 },
 {
     "id":4,
     "title":"ЧМ",
     "description":"Численные методы",
     "hours": 120,
-    "img": "https://azazira.xyz/DATAIM/images/user_avatar_images/51/c9c8168acf8d.png"    
+    "img": "https://azazira.xyz/DATAIM/images/user_avatar_images/51/c9c8168acf8d.png",
+    "liked": false  
 },
 {
     "id":5,
     "title":"РТПО",
     "description":"Разработка требований к программному обеспечению",
     "hours": 120,
-    "img": "https://cdn-images-1.listennotes.com/podcasts/lets-learn-software-engineering-roy-honders-V7_eRUan8iS-u5nI3t9KcLE.1400x1400.jpg"    
+    "img": "https://cdn-images-1.listennotes.com/podcasts/lets-learn-software-engineering-roy-honders-V7_eRUan8iS-u5nI3t9KcLE.1400x1400.jpg",
+    "liked": false  
 },
 {
     "id":6,
     "title":"Физкультура",
     "description":"Спорт, в текущем семестре - плавание.",
     "hours": 120,
-    "img": "https://img.razrisyika.ru/kart/128/1200/509948-sportivnyy-inventar-dlya-detey-6.jpg"    
+    "img": "https://img.razrisyika.ru/kart/128/1200/509948-sportivnyy-inventar-dlya-detey-6.jpg",
+    "liked": false
 },
 {
     "id":7,
     "title":"САОД",
     "description":"Структура алгоритмов и обработки данных",
     "hours": 120,
-    "img": "https://thumbs.dreamstime.com/b/сеть-базы-данных-16108936.jpg"    
+    "img": "https://thumbs.dreamstime.com/b/сеть-базы-данных-16108936.jpg",
+    "liked": false    
 }
 
 ]

@@ -13,9 +13,17 @@ const Courseslist = () => {
         const updateCourses = datacourses.filter((item)=> item.id!==id);
         setDataCourses(updateCourses);
     }
-    // const changeLike = (id) => {
-    //     const updateLike = datacourses.
-    // }
+    const changeLike = (id) => {
+        const updatedDataCourses = datacourses.map((course) => {
+          if (course.id === id) {
+            console.log(course);
+            return { ...course, liked: !course.liked };
+            
+          }
+          return course;
+        });
+        setDataCourses(updatedDataCourses);
+      };
     const handleVisiblecount =() =>{
         setVisiblecount(visibleCount+3);}
     return(
@@ -23,11 +31,14 @@ const Courseslist = () => {
         <div className ={styles.courseslist}>
             {/* <h2></h2> */}
             {/* <p>flsalfasl</p> */}
-            {datacourses.slice(0,visibleCount).map((item) => 
-                <div key= {item.id}>
-                <Course course={item} deleteCourse = {deleteCourse} />
-                </div>
-)}
+            {datacourses.slice(0, visibleCount).map((item) => (
+        <Course
+          key={item.id}
+          course={item}
+          deleteCourse={deleteCourse}
+          changeLike={changeLike}
+        />
+      ))}   
 {visibleCount < datacourses.length && (
     <button onClick= {handleVisiblecount}className={styles.btn}>Еще</button>
 )}
