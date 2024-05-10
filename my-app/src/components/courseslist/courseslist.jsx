@@ -7,7 +7,7 @@ const Courseslist = () => {
     const [datacourses, setDataCourses] = useState([]);
     useEffect(()=> {
         setDataCourses(data);
-},[])
+    },[])
     const [visibleCount, setVisiblecount]= useState(3);
     const deleteCourse = (id) =>{
         const updateCourses = datacourses.filter((item)=> item.id!==id);
@@ -27,6 +27,7 @@ const Courseslist = () => {
     const handleVisiblecount =() =>{
         setVisiblecount(visibleCount+3);}
     return(
+      
         
         <div className ={styles.courseslist}>
             {/* <h2></h2> */}
@@ -38,12 +39,18 @@ const Courseslist = () => {
           deleteCourse={deleteCourse}
           changeLike={changeLike}
         />
-      ))}   
-{visibleCount < datacourses.length && (
-    <button onClick= {handleVisiblecount}className={styles.btn}>Еще</button>
-)}
-{/* <button onClick={handleCounter}> click {counter}</button> */}
+      ))}
+      <div className={styles.pagination}>
+                {visibleCount < datacourses.length && (
+                    <button onClick={handleVisiblecount} className={styles.paginationButton}>
+                        Еще
+                    </button>
+                )}
+            </div>
+      
         </div>
+        
+        
     )
 }
 
