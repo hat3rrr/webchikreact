@@ -1,21 +1,12 @@
 import styles from './courseslistApi.module.scss';
 import { useEffect, useState } from "react";
 import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { Link } from "react-router-dom";
-
-
-// const StyledModal = styled(Modal)({
-//   display: 'flex',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   backgroundColor: 'rgba(0, 0, 0, 0.4)',
-// });
 
 
 const style = {
@@ -37,7 +28,6 @@ const CourseslistApi = () => {
   
 
   const [users, setUsers] = useState([]);
-  const [newColor, setNewColor] = useState([])
   const [posts, setPosts] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [textFilter, setTextFilter] = useState('');
@@ -45,9 +35,7 @@ const CourseslistApi = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   
-  const handleChange = () => {
-    setNewColor();
-  };
+  
   const handleCloseModal = () => {
     setOpen(false);
   };
@@ -91,10 +79,7 @@ const CourseslistApi = () => {
   const handleFilterChange = (e) => {
     setTextFilter(e.target.value);
   };
-  const handleShowClick = () => {
-    setFiltredProducts(users.filter(item => item.name.includes(textFilter)));
-    setOpen(false);
-  };
+  
 
   return (
     <>
@@ -105,7 +90,6 @@ const CourseslistApi = () => {
       </Box>
       }
       {/* {/* <p> {textFilter}</p> */}
-      <Button variant="outlined" color="secondary"> Change color</Button>
       <Button variant="contained" onClick={handleOpen}>Search</Button>
       <Modal
         open={open}
@@ -120,8 +104,9 @@ const CourseslistApi = () => {
           <TextField id="standard-basic" label="Filter" variant="standard"
             value={textFilter}
             onChange={handleFilterChange}
+            // onBlur = {handleFilterChange}
           />
-          <Button variant="contained" onClick={handleCloseModal}>
+          <Button variant="contained" onClick={handleFilterChange}>
             Show
           </Button>
         </Box>
@@ -133,13 +118,16 @@ const CourseslistApi = () => {
         users.map((user) => (
           <div key={user.id} className={styles.user}>
             <h3>{user.name}</h3>
+            
             <p>Email: {user.email}</p>
             <h4>Their Posts:</h4>
+            
             <ul className={styles.posts}>
               {posts
                 .filter((post) => post.userId === user.id)
+                .slice(0,3)
                 .map((post) => (
-                  <li key={post.id} className={styles.post}>
+                  <div key={post.id} className={styles.post}>
                     <div className={styles.postContainer}>
                       <h5>{post.title}</h5>
                       <p className={styles.postContent}>{post.body}</p>
@@ -154,11 +142,12 @@ const CourseslistApi = () => {
                       >
                         Delete
                       </Button>
-                      <Link to={`/catalogapi/${user.id}/posts`}> лолкек</Link>
+                      
                     </div>
-                  </li>
+                  </div>
                 ))}
             </ul>
+            <Link to={`/catalogapi/${user.id}/posts`}> Все посты </Link>
           </div>
         ))
         :
@@ -170,6 +159,7 @@ const CourseslistApi = () => {
             <ul className={styles.posts}>
               {posts
                 .filter((post) => post.userId === user.id)
+                .slice(0,3)
                 .map((post) => (
                   <li key={post.id} className={styles.post}>
                     <div className={styles.postContainer}>
@@ -190,6 +180,7 @@ const CourseslistApi = () => {
                   </li>
                 ))}
             </ul>
+            <Link to={`/catalogapi/${user.id}/posts`}> Все посты</Link>
           </div>
         ))
         }

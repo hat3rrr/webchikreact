@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 import Courseslist from './components/courseslist/courseslist';
 import {Routes,
   Route,
@@ -9,7 +10,6 @@ import Error from './pages/Error';
 import About from './pages/About';
 import CourseslistApi from './components/courseslist/courseslistApi';
 import InfoAbt from './components/infoabt/infoabt';
-import { useParams } from 'react-router-dom';
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
 
       
       </Routes>
+      {/* <Footer></Footer> */}
     </div>
     </Router>
   );
