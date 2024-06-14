@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: "#f5f5f5";
+    padding: "20px";
+    border-radius: "10px";
+
+  }
+  .postContainer {
+//   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.postContent {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #666;
+}
+  
+  .user {
+    width: calc(33.33% - 10px);
+    background-color: #f5f5f5;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-color: #e91e63;
+    
+    
+  }
+  
+  .user:hover {
+    transform: translateY(-5px);
+  }
+  
+  .user h3 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .user p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .posts {
+    margin-top: 20px;
+  }
+  .btn{
+    display: flex;
+
+  }
+  
+  // .mdl{
+    // display: flex;
+  // }
+  .posts h4 {
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .posts ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .posts li {
+    font-size: 16px;
+    color: #666;
+  }
+  .likeButton {
+    background-color: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .deleteButton {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }

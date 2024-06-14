@@ -1,57 +1,69 @@
-import Course from "../course/courses";
-import styles from './courseslist.module.scss';
-import data from '../../data.json';
 import { useEffect, useState } from "react";
+import { TextField, Button, Stack, Rating, Select, MenuItem } from "@mui/material";
 
-const Courseslist = () => {
-    const [datacourses, setDataCourses] = useState([]);
-    useEffect(()=> {
-        setDataCourses(data);
-    },[])
-    const [visibleCount, setVisiblecount]= useState(3);
-    const deleteCourse = (id) =>{
-        const updateCourses = datacourses.filter((item)=> item.id!==id);
-        setDataCourses(updateCourses);
-    }
-    const changeLike = (id) => {
-        const updatedDataCourses = datacourses.map((course) => {
-          if (course.id === id) {
-            console.log(course);
-            return { ...course, liked: !course.liked };
-            
-          }
-          return course;
-        });
-        setDataCourses(updatedDataCourses);
-      };
-    const handleVisiblecount =() =>{
-        setVisiblecount(visibleCount+3);}
-    return(
-      
-        
-        <div className ={styles.courseslist}>
-            {/* <h2></h2> */}
-            {/* <p>flsalfasl</p> */}
-            {datacourses.slice(0, visibleCount).map((item) => (
-        <Course
-          key={item.id}
-          course={item}
-          deleteCourse={deleteCourse}
-          changeLike={changeLike}
-        />
-      ))}
-      <div className={styles.pagination}>
-                {visibleCount < datacourses.length && (
-                    <button onClick={handleVisiblecount} className={styles.paginationButton}>
-                        Еще
-                    </button>
-                )}
+import styles from './courseslist.module.scss';
+
+const PhotoCard = ({ photo }) => {
+  return (
+    <div className="photo-card">
+      <h3>{photo.title}</h3>
+      <img src={photo.url} alt={photo.title} />
+      <p>Album ID: {photo.albumId}</p>
+      <Rating name="no-value" value={null} />
+    </div>
+  );
+};
+
+const CourseslistApi2 = () => {
+  const [photos, setPhotos] = useState([]);
+  const [visiblePhotos, setVisiblePhotos] = useState(15);
+  const [albumFilter, setAlbumFilter] = useState('');
+
+  const uniqueAlbumIds = new Set(photos.map(photo => photo.albumId));
+  useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/photos')
+      .then(response => response.json())
+      .then(data => setPhotos(data));
+  }, []);
+
+  const loadMorePhotos = () => {
+    setVisiblePhotos(prevVisiblePhotos => prevVisiblePhotos + 15);
+  };
+
+  const handleAlbumFilterChange = (event) => {
+    setAlbumFilter(event.target.value);
+  };
+  const filteredPhotos = photos.filter(photo => albumFilter === '' || photo.albumId === parseInt(albumFilter));
+
+
+  return (
+    <div className={styles.container}>
+      {/* <h1>Photos</h1> */}
+      <div className={styles.filter}>
+        <label htmlFor="album-filter">Filter by Album ID:</label>
+        <select id="album-filter" value={albumFilter} onChange={handleAlbumFilterChange}>
+          <option value="">All</option>
+          {Array.from(uniqueAlbumIds).map(albumId => (
+            <option key={albumId} value={albumId}>{albumId}</option>
+          ))}
+        </select>
+      </div>
+      <div className={styles.posts}>
+        {filteredPhotos.slice(0, visiblePhotos).map(photo => (
+          <div className={styles.user} key={photo.id}>
+            <div className={styles.photoCard}>
+              <PhotoCard photo={photo} />
             </div>
-      
-        </div>
-        
-        
-    )
-}
+          </div>
+        ))}
+      </div>
+      {visiblePhotos < filteredPhotos.length && (
+        <Button variant="outlined" onClick={loadMorePhotos} className={styles.btn}>
+          Еще
+        </Button>
+      )}
+    </div>
+  );
+};
 
-export default Courseslist;
+export default CourseslistApi2;
